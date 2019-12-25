@@ -7,11 +7,11 @@ const filePath = path.join(__dirname, "./data.txt");
 const data = fs.readFileSync(filePath, { encoding: "utf-8" });
 const conversion = require("../config/convertJSON");
 let result = conversion(data);
-console.log(result);
+//console.log(result);
 detailsRouter.route("/").post((req, res) => {
   //console.log(req.body);
   const { search } = req.body;
-  console.log(search);
+  //console.log(search);
   let newArray = result.filter(function(el) {
     return (
       el.phoneNo.toLowerCase() == search.toLowerCase() ||
