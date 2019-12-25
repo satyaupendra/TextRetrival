@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/simplex/bootstrap.min.css" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Phone Book App</title>
+</head>
+
+<body >
+  <div class="container">   
+    <br>
+      <center><a class="btn btn-primary btn-lg" href="/" role="button">Back to Home Page🙌</a></center>
+      <% for(var i=0; i < newArray.length; i++) { %>
+        <div class="card-deck mx-auto" style="display:inline-flex">   
+          <a style="color:black">
+          <div class="card" style="width:21rem ">
+           <div class="card-body text-bold">
+              <div class="card-header">
+                  <%= newArray[i].name %>
+                </div>
+              <ul class="list-group list-group-flush"></ul>
+                  <li class="list-group-item">📞<%= newArray[i].phoneNo %></li>
+                  <li class="list-group-item">🏠<%= newArray[i].address %></li>
+                  <li class="list-group-item">🌆<%= newArray[i].city %></li>
+                  <li class="list-group-item">📍<%= newArray[i].pincode %></li>
+                </ul>
+            </div>
+          </div>  
+          <br> 
+        </a>  
+        </div>  
+      <% } %>
+      <br> 
+    </div>
+    </div>
+</body>
+</html>

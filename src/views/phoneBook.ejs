@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/simplex/bootstrap.min.css" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Phone Book App</title>
+</head>
+
+<body >
+  <center><h1>Phone Book</h1></center>
+  <div class="container">
+      <form  action="/details" method="POST">
+        <div class="form-group ">
+        <div class="input-group mb-3">  
+        <input type="name" name="search" class="form-control" value="<%= typeof search != 'undefined' ? search : '' %>" placeholder="Search Contact" aria-label="Search" id="search" aria-describedby="button-addon2">
+        <button class="btn btn-outline-danger" type="submit" id="button-addon2">Search</button>
+      </div>
+      </div>
+    </form>    
+      <% for(var i=0; i < result.length; i++) { %>
+        <div class="card-deck mx-auto" style="display:inline-flex">   
+          <a style="color:black">
+          <div class="card" style="width:21rem ">
+           <div class="card-body text-bold">
+              <div class="card-header">
+                  <b><%= result[i].name %></b>
+                </div>
+              <ul class="list-group list-group-flush"></ul>
+                  <li class="list-group-item">📞<%= result[i].phoneNo %></li>
+                  <li class="list-group-item">🏠<%= result[i].address %></li>
+                  <li class="list-group-item">🌆<%= result[i].city %></li>
+                  <li class="list-group-item">📍<%= result[i].pincode %></li>
+                </ul>
+            </div>
+          </div>  
+          <br> 
+        </a>  
+        </div>  
+      <% } %>
+      <br> 
+    </div>
+    </div>
+</body>
+</html>

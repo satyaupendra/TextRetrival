@@ -1,2 +1,0 @@
-# TextRetrival
-Created with CodeSandbox
