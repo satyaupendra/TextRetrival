@@ -13,7 +13,10 @@ detailsRouter.route("/").post((req, res) => {
   const { search } = req.body;
   console.log(search);
   let newArray = result.filter(function(el) {
-    return el.phoneNo.toLowerCase() == search.toLowerCase();
+    return (
+      el.phoneNo.toLowerCase() == search.toLowerCase() ||
+      search.toLowerCase() == el.name.toLowerCase()
+    );
   });
   if (newArray.length > 0) {
     //console.log(newArray);
